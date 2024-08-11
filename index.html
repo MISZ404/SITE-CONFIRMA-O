@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmação de Presença - Estreia de Filme</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Confirmação de Presença</h1>
+        <p>Você está convidado para a estreia do filme "<strong>[Título do Filme]</strong>". Por favor, confirme sua presença preenchendo o formulário abaixo:</p>
+        <form id="rsvp-form">
+            <div class="form-group">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="attendance">Você poderá comparecer?</label>
+                <select id="attendance" name="attendance" required>
+                    <option value="">Selecione uma opção</option>
+                    <option value="yes">Sim</option>
+                    <option value="no">Não</option>
+                </select>
+            </div>
+            <button type="submit">Confirmar Presença</button>
+        </form>
+        <div id="receipt" class="hidden">
+            <h2>Recibo de Confirmação</h2>
+            <p><strong>Nome:</strong> <span id="receipt-name"></span></p>
+            <p><strong>Email:</strong> <span id="receipt-email"></span></p>
+            <p><strong>Presença Confirmada:</strong> <span id="receipt-attendance"></span></p>
+            <button onclick="printReceipt()">Imprimir Recibo</button>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
